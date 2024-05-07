@@ -1,7 +1,7 @@
 # OCTANET_MAY
 Octanet Summer Internship
 
-TASK 1(LANDING PAGE):
+<b>TASK 1(LANDING PAGE):</b>
 Welcome to Fries and Fun!
 
 This landing page showcases Fries and Fun, a vibrant cafe nestled in Coimbatore, India. At Fries and Fun, we specialize in handcrafted fries bursting with flavor and served with a side of laughter.
