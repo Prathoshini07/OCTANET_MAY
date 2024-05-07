@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Fries and Fun</title>
+        <link rel="stylesheet" type="text/css" href="Styles2.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Great+Vibes&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Great+Vibes&family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    </head>
+    <body>
+    <div class="parallax">
+        <div id="sections">
+            <div id="section1">
+                <ul>
+                    <li id="section2"><a href="#sections" style="text-decoration:None;color: whitesmoke;">Fries and Fun</a></li>
+                    <li ><a href="#sections" style="text-decoration:None;color: whitesmoke;">HOME</a></li>
+                    <li><a href="#section4" style="text-decoration:None;color: whitesmoke;">ABOUT US</a></li>
+                    <li ><a href="#section5" style="text-decoration:None;color: whitesmoke;">MENU</a></li>
+                </ul>
+            </div>
+            <div id="section3">
+                <h1 id="section3text"></h1>
+            </div>
+        </div>
+    
+        <script>
+            // Function to animate text letter by letter
+            function animateText(elementId, text, delay) {
+                const element = document.getElementById(elementId);
+                const textLength = text.length;
+                let index = 0;
+    
+                function showLetter() {
+                    if (index < textLength) {
+                        element.textContent += text.charAt(index);
+                        index++;
+                        setTimeout(showLetter, delay); 
+                    }
+                }
+    
+                showLetter(); 
+            }
+            animateText("section3text", "Where Taste meets Fun", 100);
+        </script>
+        <div id="section4">
+            <h1>ABOUT US</h1>
+            <p style="text-align: center;">At Fries and Fun, we're not just about fries; we're about creating unforgettable moments.
+                 Nestled in the heart of Coimbatore, our cafe offers a tantalizing array of handcrafted 
+                 fries, each bite bursting with flavor and served with a side of laughter. From classic favorites
+                  to daring combinations, our menu is a celebration of culinary creativity. But it's not just about the food; 
+                  it's about the experience. Step into our vibrant space, where every visit promises warmth, community, and a 
+                  sprinkle of fun. Whether you're here for a quick snack or a leisurely meal with friends, Fries and Fun is where 
+                  memories are made and cravings are satisfied.</p>
+        </div>
+        <div id="section5">
+            <h1>MENU</h1>
+            <ul>
+                <li>Classic Cheeseburger - ₹250</li>
+                <li>Crispy Chicken Sandwich - ₹200</li>
+                <li>Loaded Fries with Bacon and Cheese - ₹300</li>
+                <li>Fresh Garden Salad - ₹150</li>
+                <li>Decadent Chocolate Milkshake - ₹120</li>
+                <li>Veggie Panini - ₹180</li>
+                <li>Spicy Buffalo Wings - ₹220</li>
+                <li>Margherita Pizza - ₹280</li>
+                <li>Creamy Mushroom Risotto - ₹320</li>
+                <li>Iced Caramel Latte - ₹100</li>
+                <li>Grilled Vegetable Wrap - ₹180</li>
+                <li>Belgian Waffle with Berries - ₹200</li>
+                <li>Classic Caesar Salad - ₹180</li>
+                <li>Espresso - ₹80</li>
+                <li>Blueberry Cheesecake - ₹220</li>
+            </ul>
+        </div>
+        
+    </div>
+    </body>
+</html>
