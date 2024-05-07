@@ -1,0 +1,100 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+}
+
+#sections {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Align content at the top */
+    align-items: center; 
+    height: 100vh; /* Full viewport height */
+    background-image: url('assets/fries_and_fun4.png'); /* Path to your image */
+    background-size: cover; /* Cover the entire container with the background image */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Do not repeat the background image */
+}
+
+#section1
+{
+    position: relative;
+    width: 100%; /* Occupy full width */
+    list-style: none; /* Remove bullet points */
+    padding: 20px; /* Add some padding for spacing */
+    text-align: center; /* Center the content */
+    padding-top: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+#section2{
+    font-family:Great Vibes, cursive;
+    font-weight: 600;
+    margin-right: 800px;
+    font-size: 30px;
+}
+#section1 li {
+    display: inline-block;
+    margin-right: 20px; /* Adjust margin between list items */
+    color: whitesmoke; /* Set text color */
+}
+
+#section3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    padding-top: 200px;
+    color: rgb(27, 25, 25,0.8); /* Set text color to contrast with background */
+    transition: all 0.5s ease; /* Transition for smooth effect */
+    font-family: "Dancing Script", cursive;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+#section3:hover {
+    transform: scale(1.1); /* Example of a hover effect */
+}
+.parallax {
+    background-image: url("assets/fries_and_fun6.png");
+    min-height: 500px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+#section4{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-left: 200px;
+    margin-right: 200px;
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 500;
+    font-style: normal;
+    color:white;
+    font-size: larger;
+}
+#section5{
+    background-image: url('assets/fries_and_fun3.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-left: 200px;
+    margin-right: 200px;
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 500;
+    font-style: normal;
+    color:white;
+    font-size: larger;
+}
