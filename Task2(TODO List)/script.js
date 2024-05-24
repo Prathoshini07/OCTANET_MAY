@@ -1,46 +1,69 @@
-function addTask() {
-    var input = document.getElementById("taskInput");
-    var taskText = input.value.trim();
+document.addEventListener("DOMContentLoaded", function() {
+    const dueDateInput = document.getElementById('dueDate');
+    const startTimeInput = document.getElementById('startTime');
+    const endTimeInput = document.getElementById('endTime');
+    const timeRequiredInput = document.getElementById('timeRequired');
+    const today = new Date().toISOString().split('T')[0];
+    dueDateInput.setAttribute('min', today);
 
-    if (taskText !== "") {
-        var taskList = document.getElementById("taskList");
+    function calculateTimeRequired() {
+        const startTime = startTimeInput.value;
+        const endTime = endTimeInput.value;
+        
+        if (startTime && endTime) {
+            const start = new Date(`1970-01-01T${startTime}:00`);
+            const end = new Date(`1970-01-01T${endTime}:00`);
+            const diff = (end - start) / 60000; // Difference in minutes
 
-        var li = document.createElement("li");
-        li.textContent = taskText;
-
-        var deleteBtn = document.createElement("button");
-        deleteBtn.textContent = "❌";
-        deleteBtn.classList.add("delete-btn");
-        deleteBtn.onclick = function() {
-            li.remove();
-        };
-        li.appendChild(deleteBtn);
-
-        var prioritySelect = document.createElement("select");
-        prioritySelect.innerHTML = `
-            <option value="low">Low</option>
-            <option value="medium">Medium</option>
-            <option value="high">High</option>
-        `;
-        prioritySelect.addEventListener('change', function() {
-            li.classList.remove('priority-low', 'priority-medium', 'priority-high');
-            li.classList.add('priority-' + this.value);
-        });
-        li.appendChild(prioritySelect);
-
-        var dueDateInput = document.createElement("input");
-        dueDateInput.type = "date";
-        dueDateInput.addEventListener('change', function() {
-            li.setAttribute('data-due-date', this.value);
-        });
-        li.appendChild(dueDateInput);
-
-        li.onclick = function() {
-            li.classList.toggle("completed");
-        };
-
-        taskList.appendChild(li);
-
-        input.value = "";
+            if (diff > 0) {
+                timeRequiredInput.value = diff;
+            } else {
+                timeRequiredInput.value = "";
+            }
+        }
     }
-}
+
+    function addTask() {
+        const taskInput = document.getElementById('taskInput');
+        const dueDate = dueDateInput.value;
+        const startTime = startTimeInput.value;
+        const endTime = endTimeInput.value;
+        const timeRequired = timeRequiredInput.value;
+        const priority = document.getElementById('priority').value;
+        const category = document.getElementById('category').value;
+        const taskList = document.getElementById('taskList');
+
+        if (taskInput.value.trim() !== "" && dueDate && startTime && endTime && timeRequired) {
+            const li = document.createElement('li');
+            li.className = priority;
+            li.innerHTML = `
+                <span>${taskInput.value}</span>
+                <span>Due: ${new Date(dueDate).toLocaleDateString()}</span>
+                <span>Start: ${startTime}</span>
+                <span>End: ${endTime}</span>
+                <span>Time Required: ${timeRequired} mins</span>
+                <span>Category: ${category}</span>
+                <button onclick="markComplete(this)">Complete</button>
+                <button onclick="deleteTask(this)">Delete</button>
+            `;
+            taskList.appendChild(li);
+            taskInput.value = "";
+            startTimeInput.value = "";
+            endTimeInput.value = "";
+            timeRequiredInput.value = "";
+        }
+    }
+
+    window.calculateTimeRequired = calculateTimeRequired;
+    window.addTask = addTask;
+
+    window.markComplete = function(button) {
+        const task = button.parentElement;
+        task.classList.toggle('completed');
+    }
+
+    window.deleteTask = function(button) {
+        const task = button.parentElement;
+        task.remove();
+    }
+});
