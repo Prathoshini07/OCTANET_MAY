@@ -69,7 +69,6 @@ button {
 }
 
 #taskList li {
-    background: #f8f9fa;
     margin: 10px 0;
     padding: 10px;
     border: 1px solid #e7e7e7;
@@ -88,13 +87,17 @@ button {
 }
 
 .low {
-    border-left: 5px solid green;
+    background-color: rgb(127, 227, 127);
 }
 
 .medium {
-    border-left: 5px solid orange;
+    background-color:yellow;
 }
 
 .high {
-    border-left: 5px solid red;
+    background-color: rgb(215, 109, 109);
+}
+
+.task {
+    width: 100%;
 }

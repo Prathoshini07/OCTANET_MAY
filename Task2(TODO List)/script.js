@@ -13,8 +13,7 @@ document.addEventListener("DOMContentLoaded", function() {
         if (startTime && endTime) {
             const start = new Date(`1970-01-01T${startTime}:00`);
             const end = new Date(`1970-01-01T${endTime}:00`);
-            const diff = (end - start) / 60000; // Difference in minutes
-
+            const diff = (end - start) / 60000; 
             if (diff > 0) {
                 timeRequiredInput.value = diff;
             } else {
@@ -32,10 +31,9 @@ document.addEventListener("DOMContentLoaded", function() {
         const priority = document.getElementById('priority').value;
         const category = document.getElementById('category').value;
         const taskList = document.getElementById('taskList');
-
+    
         if (taskInput.value.trim() !== "" && dueDate && startTime && endTime && timeRequired) {
             const li = document.createElement('li');
-            li.className = priority;
             li.innerHTML = `
                 <span>${taskInput.value}</span>
                 <span>Due: ${new Date(dueDate).toLocaleDateString()}</span>
@@ -46,6 +44,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 <button onclick="markComplete(this)">Complete</button>
                 <button onclick="deleteTask(this)">Delete</button>
             `;
+            li.classList.add(priority); // Assigning priority class for styling
             taskList.appendChild(li);
             taskInput.value = "";
             startTimeInput.value = "";
@@ -53,6 +52,7 @@ document.addEventListener("DOMContentLoaded", function() {
             timeRequiredInput.value = "";
         }
     }
+    
 
     window.calculateTimeRequired = calculateTimeRequired;
     window.addTask = addTask;
